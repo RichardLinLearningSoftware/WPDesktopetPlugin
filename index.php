@@ -3,7 +3,7 @@
 * Plugin name: Pet on your desktop
 * Description: A thing on your desktop
 * Author: Me yay
-* Version: 1.0.1
+* Version: 1.0.2
 */
 
 if (!defined('ABSPATH')) {
