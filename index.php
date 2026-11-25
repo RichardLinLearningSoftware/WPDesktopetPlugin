@@ -3,8 +3,20 @@
 * Plugin name: Pet on your desktop
 * Description: A thing on your desktop
 * Author: Me yay
-* Version: 1.0.2
+* Version: 1.0.3
 */
+
+$response = wp_remote_get(
+    'https://pxokxpvauwrlusxjzwmc.supabase.co/rest/v1/music?select=*',
+    array(
+        'headers' => array(
+            'apikey' => "sb_publishable_rN8JnrzyR1qxnFqwCsFmRg_v9O_h1Aa"
+        )
+    )
+);
+
+$body = wp_remote_retrieve_body($response);
+$data = json_decode($body);
 
 if (!defined('ABSPATH')) {
     exit;
@@ -13,7 +25,9 @@ if (!defined('ABSPATH')) {
 add_action('wp_footer', 'plugin_content');
 
 function plugin_content() {
-    echo '<div class="viewport">Wow</div>';
+    ?>
+        <div class="viewport"></div>
+    <?php
 }
 
 add_action( 'wp_enqueue_scripts', 'AddScripts' );
